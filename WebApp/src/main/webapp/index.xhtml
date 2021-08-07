@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+	<title>Encuentra Datos ML</title>
+
+	<!-- ESTE JAVAX.FACES ES PARA PODER INYECTAR JAVASCRIPT A LA MANERA DE FACES -->
+	<h:outputScript library="javax.faces" name="jsf.js" target="body" />
+
+	<!-- ESTE ES PARA IMPORTAR BOOTSTRAP DESDE LA DEPENDENCIA AGREGADA EN EL POM -->
+	<h:outputStylesheet library="webjars"
+		name="/bootstrap/4.3.1/css/bootstrap.min-jsf.css" />
+	<h:outputStylesheet href="css/estilo.css" rel="stylesheet"
+		type="text/css" />
+
+</h:head>
+
+<h:body>
+
+
+	<div class="container">
+
+		<div class="row justify-content-center align-items-center vh-100">
+			<div class="jumbotron w-100">
+				<h1 class="display-4">Bienvenido a buscador de vendedores de ML</h1>
+				<a href="https://pabloburzomi.com" target="_blank">Pablo Pérez
+					Burzomi</a>
+				<hr class="my-4" />
+				<h:form>
+					<p>Ingresa el Nick del vendedor de Mercado Libre:</p>
+					<h:inputText value="#{nickNameBean.nickUsuario}"></h:inputText>
+					<br></br><br></br>
+					<h:commandButton action="${nickNameBean.vendedor}" value="Buscar" />	
+				</h:form>
+			</div>
+		</div>
+	</div>
+
+</h:body>
+
+
+<!-- <h:outputScript -->
+<!-- 	src="C:\Users\pablo\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\app-parent\WebApp\src\main\resources\main.js" /> -->
+</html>

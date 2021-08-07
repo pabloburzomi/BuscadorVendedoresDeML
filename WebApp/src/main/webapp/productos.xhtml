@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Productos MLA</title>
+
+	<!-- ESTE JAVAX.FACES ES PARA PODER INYECTAR JAVASCRIPT A LA MANERA DE FACES -->
+	<h:outputScript library="javax.faces" name="jsf.js" target="body" />
+
+	<!-- ESTE ES PARA IMPORTAR BOOTSTRAP DESDE LA DEPENDENCIA AGREGADA EN EL POM -->
+	<h:outputStylesheet library="webjars"
+		name="/bootstrap/4.3.1/css/bootstrap.min-jsf.css" />
+	<h:outputStylesheet href="css/estilo.css" rel="stylesheet"
+		type="text/css" />
+	<script type="text/javascript" src="js/main.js"></script>
+
+</h:head>
+
+<h:body>
+
+
+	<h:dataTable value="#{nickNameBean.result}" var="resultado"
+		style="margin:20px;">
+
+		<h:column>
+			<f:facet name="header">Titulo</f:facet>
+			<p:outputLabel value="#{resultado.getTitle()}" style="margin:10px;" />
+		</h:column>
+
+
+		<h:column>
+
+			<f:facet name="header" style="margin:20px;">Id</f:facet>
+			<p:outputLabel value="#{resultado.getId()}" style="margin:10px;" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header" style="margin-left:10px">Condición</f:facet>
+			<p:outputLabel value="#{resultado.getCondition()}"
+				style="margin:10px;" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Precio</f:facet>
+			<h:commandLink value="#{resultado.getPermalink()}"
+				action="#{resultado.getPermalink()}"/>
+		</h:column>
+
+		<h:column>
+			<f:facet name="header" style="margin:10px;">Precio</f:facet>
+			<p:outputLabel value="#{resultado.getPrice()}" style="margin:10px;">$</p:outputLabel>
+		</h:column>
+
+
+	</h:dataTable>
+
+
+</h:body>
+</html>
