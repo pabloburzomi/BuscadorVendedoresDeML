@@ -1,6 +1,9 @@
 package com.pabloburzomi.jsf.web;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 
@@ -38,15 +41,24 @@ public class nickNameBean {
 	}
 
 	public String vendedor() {
+		
+		if (nickUsuario.contains(" ")) { 
+			
+			List<String> var2 = Arrays.asList(nickUsuario.split(" ", nickUsuario.length()-1));
+			nickUsuario = var2.stream().collect(Collectors.joining("+")).toString();
+		} 
+		
 
 		String urlApi = "https://api.mercadolibre.com/sites/MLA/search?nickname=" + nickUsuario;
 
 		RestRequest<ProductoRest> peticionRest = new VendedorRestRequest(urlApi);
-
+		
+		
+		
 		try {
 
 			vendedorMla = peticionRest.executeRestCall();
-
+			
 			fechaRegistro = vendedorMla.getSeller().getRegistrationDate();
 			nickName = vendedorMla.getSeller().getNickname();
 			id = vendedorMla.getSeller().getId();
@@ -61,10 +73,14 @@ public class nickNameBean {
 			totalCanceladas = vendedorMla.getSeller().getSellerReputation().getTransactions().getCanceled();
 			totalTransacciones = vendedorMla.getSeller().getSellerReputation().getTransactions().getTotal();
 
-		} catch (Exception e) {
+		} catch (NullPointerException e) {
 
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return "noExiste";
+			
+		} catch(Exception ex) {
+			
+			System.out.println("Hubo el siguiente error: " + ex.getCause());
+			
 		}
 
 		return "buscador";
@@ -80,6 +96,12 @@ public class nickNameBean {
 		return "productos";
 
 	}
+	
+	public String inicio() {
+		return "index";
+	}
+	
+	
 
 	public String getNickUsuario() {
 		return nickUsuario;
