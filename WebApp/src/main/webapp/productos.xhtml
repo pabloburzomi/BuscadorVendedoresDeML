@@ -14,8 +14,7 @@
 	<!-- ESTE ES PARA IMPORTAR BOOTSTRAP DESDE LA DEPENDENCIA AGREGADA EN EL POM -->
 	<h:outputStylesheet library="webjars"
 		name="/bootstrap/4.3.1/css/bootstrap.min-jsf.css" />
-	<h:outputStylesheet href="css/estilo.css" rel="stylesheet"
-		type="text/css" />
+
 	<script type="text/javascript" src="js/main.js"></script>
 
 </h:head>
@@ -23,39 +22,39 @@
 <h:body>
 
 
-	<h:dataTable value="#{nickNameBean.result}" var="resultado"
+	<p:dataTable value="#{nickNameBean.result}" var="resultado"
 		style="margin:20px;">
 
-		<h:column>
+		<p:column>
 			<f:facet name="header">Titulo</f:facet>
 			<p:outputLabel value="#{resultado.getTitle()}" style="margin:10px;" />
-		</h:column>
+		</p:column>
 
 
-		<h:column>
+		<p:column>
 
-			<f:facet name="header" style="margin:20px;">Id</f:facet>
+			<f:facet name="header">Id</f:facet>
 			<p:outputLabel value="#{resultado.getId()}" style="margin:10px;" />
-		</h:column>
+		</p:column>
 
-		<h:column>
-			<f:facet name="header" style="margin-left:10px">Condición</f:facet>
+		<p:column>
+			<f:facet name="header">Condición</f:facet>
 			<p:outputLabel value="#{resultado.getCondition()}"
 				style="margin:10px;" />
-		</h:column>
-		<h:column>
+		</p:column>
+		<p:column>
 			<f:facet name="header">Precio</f:facet>
-			<h:commandLink value="#{resultado.getPermalink()}"
+			<p:commandLink value="#{resultado.getPermalink()}"
 				action="#{resultado.getPermalink()}"/>
-		</h:column>
+		</p:column>
 
-		<h:column>
-			<f:facet name="header" style="margin:10px;">Precio</f:facet>
+		<p:column>
+			<f:facet name="header">Precio</f:facet>
 			<p:outputLabel value="#{resultado.getPrice()}" style="margin:10px;">$</p:outputLabel>
-		</h:column>
+		</p:column>
 
 
-	</h:dataTable>
+	</p:dataTable>
 
 
 </h:body>

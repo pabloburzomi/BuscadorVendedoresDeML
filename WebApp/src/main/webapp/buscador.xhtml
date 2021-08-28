@@ -15,8 +15,6 @@
 	<!-- ESTE ES PARA IMPORTAR BOOTSTRAP DESDE LA DEPENDENCIA AGREGADA EN EL POM -->
 	<h:outputStylesheet library="webjars"
 		name="/bootstrap/4.3.1/css/bootstrap.min-jsf.css" />
-	<h:outputStylesheet href="css/estilo.css" rel="stylesheet"
-		type="text/css" />
 
 </h:head>
 
@@ -28,72 +26,72 @@
 		<div class="row justify-content-center align-items-center vh-100">
 			<div class="jumbotron w-100">
 
-				<h:outputLabel styleClass="col-4 col-form-label"
+				<p:outputLabel styleClass="col-4 col-form-label"
 					style="margin-left:250px;"
-					value="DATOS DE #{nickNameBean.nickUsuario}"></h:outputLabel>
+					value="DATOS DE #{nickNameBean.nickUsuario}"></p:outputLabel>
 				<hr class="my-4" />
 
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="Nick del vendedor: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.nickUsuario}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="Nick del vendedor: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.nickUsuario}"></p:outputLabel>
 
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="id del Vendedor: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.id}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="id del Vendedor: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.id}"></p:outputLabel>
 
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="fecha de registro del Vendedor: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.fechaRegistro}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="fecha de registro del Vendedor: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.fechaRegistro}"></p:outputLabel>
 
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="Link de Mercado Libre: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.link}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="Link de Mercado Libre: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.link}"></p:outputLabel>
 
 				<br></br> <br></br>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="Reputacion con sus ventas "></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="Reputacion con sus ventas "></p:outputLabel>
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label" value="Positiva: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.reputacionPositiva}%"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label" value="Positiva: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.reputacionPositiva}%"></p:outputLabel>
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label" value="Negativa: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.reputacionNegativa}%"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label" value="Negativa: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.reputacionNegativa}%"></p:outputLabel>
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label" value="Neutral: "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.reputacionNeutral}%"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label" value="Neutral: "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.reputacionNeutral}%"></p:outputLabel>
 					
 				<hr class="my-4" />
 				
 				<br></br> <br></br>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="Total de ventas "></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="Total de ventas "></p:outputLabel>
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label" value="Cantidad de transacciones "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.totalTransacciones}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label" value="Cantidad de transacciones "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.totalTransacciones}"></p:outputLabel>
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label" value="Completadas "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.totalCompletadas}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label" value="Completadas "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.totalCompletadas}"></p:outputLabel>
 				<br></br>
-				<h:outputLabel styleClass="col-4 col-form-label" value="Canceladas "></h:outputLabel>
-				<h:outputLabel styleClass="col-4 col-form-label"
-					value="#{nickNameBean.totalCanceladas}"></h:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label" value="Canceladas "></p:outputLabel>
+				<p:outputLabel styleClass="col-4 col-form-label"
+					value="#{nickNameBean.totalCanceladas}"></p:outputLabel>
 				
-				<br></br>
+                                <br></br><br></br><br></br>
 				<h:form>
-				<h:commandButton action="${nickNameBean.showProducts}" value="Buscar" />
+				<p:commandButton action="${nickNameBean.showProducts}" value="Buscar Productos" />
 				</h:form>	
 
 

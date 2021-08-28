@@ -17,8 +17,5 @@
     </properties>
 
 
-    <modules>
-        <module>MLARest</module>
-        <module>WebApp</module>
-    </modules>
+    <modules></modules>
 </project>
