@@ -51,9 +51,11 @@ public class nickNameBean {
 	public String vendedor() {
 		
 		if (nickUsuario.contains(" ")) { 
-			
-			List<String> var2 = Arrays.asList(nickUsuario.split(" ", nickUsuario.length()-1));
-			nickUsuario = var2.stream().collect(Collectors.joining("+")).toString();
+
+			 nickUsuario = Arrays.asList(nickUsuario
+					 								.split(" ", nickUsuario.length()-1))
+					 								.stream().collect(Collectors.joining("+"))
+					 								.toString();
 		} 
 		
 		
