@@ -16,8 +16,9 @@ import com.pabloburzomi.MLARest.meli.VendedorRestRequest;
 @ManagedBean
 @RequestScoped
 public class nickNameBean {
-
-	private static String nickUsuario;
+	
+	final String URLAPI = "https://api.mercadolibre.com/sites/MLA/search?nickname="; 
+	private String nickUsuario;
 	private static ProductoRest vendedorMla;
 	private Seller seller;
 	private String nickName;
@@ -39,6 +40,13 @@ public class nickNameBean {
 		return "buscador";
 
 	}
+        
+        
+	public String inicio() {
+		
+		nickUsuario = "";
+		return "index";
+	}
 
 	public String vendedor() {
 		
@@ -48,10 +56,11 @@ public class nickNameBean {
 			nickUsuario = var2.stream().collect(Collectors.joining("+")).toString();
 		} 
 		
+		
+		
+		String url = URLAPI + nickUsuario;
 
-		String urlApi = "https://api.mercadolibre.com/sites/MLA/search?nickname=" + nickUsuario;
-
-		RestRequest<ProductoRest> peticionRest = new VendedorRestRequest(urlApi);
+		RestRequest<ProductoRest> peticionRest = new VendedorRestRequest(url);
 		
 		
 		
@@ -78,8 +87,9 @@ public class nickNameBean {
 			return "noExiste";
 			
 		} catch(Exception ex) {
+                    
 			
-			System.out.println("Hubo el siguiente error: " + ex.getCause());
+                    System.out.println("Hubo el siguiente error: " + ex.getMessage());
 			
 		}
 
@@ -96,12 +106,6 @@ public class nickNameBean {
 		return "productos";
 
 	}
-	
-	public String inicio() {
-		return "index";
-	}
-	
-	
 
 	public String getNickUsuario() {
 		return nickUsuario;
@@ -109,15 +113,16 @@ public class nickNameBean {
 
 	public void setNickUsuario(String nick) {
 
-		nickUsuario = nick;
+		this.nickUsuario = nick;
 	}
 
 	public ProductoRest getVendedorMla() {
 		return vendedorMla;
 	}
 
-	public void setVendedorMla(ProductoRest vendedorMla) {
-		this.vendedorMla = vendedorMla;
+
+	public static void setVendedorMla(ProductoRest vendedorMla) {
+		nickNameBean.vendedorMla = vendedorMla;
 	}
 
 	public Seller getSeller() {

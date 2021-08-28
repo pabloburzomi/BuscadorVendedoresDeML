@@ -16,8 +16,6 @@
 	<!-- ESTE ES PARA IMPORTAR BOOTSTRAP DESDE LA DEPENDENCIA AGREGADA EN EL POM -->
 	<h:outputStylesheet library="webjars"
 		name="/bootstrap/4.3.1/css/bootstrap.min-jsf.css" />
-	<h:outputStylesheet href="css/estilo.css" rel="stylesheet"
-		type="text/css" />
 
 </h:head>
 
@@ -28,16 +26,16 @@
 
 		<div class="row justify-content-center align-items-center vh-100">
 			<div class="jumbotron w-100">
-				<h2 class="display-4">No se encontró al vendedor. Por favor verifique que el nick name del vendedor sea el correcto</h2>
+				<h4>No se encontró al vendedor. Por favor verifique que el nick name del vendedor sea el correcto</h4>
 				<a href="https://pabloburzomi.com" target="_blank">Pablo Pérez
 					Burzomi</a>
 				<hr class="my-4" />
-				<h4>Ejemplo: (ver parte resaltada en la barra de direcciones) </h4>
-				<img src="MLA.jpg" width="550px" alt="descripción" />
+				<h6>Ejemplo: (ver parte resaltada en la barra de direcciones) </h6>
+				<img src="MLA.jpg" width="650px" alt="descripción" />
 				<h:form>
 					<br></br>
 					<br></br>
-					<h:commandButton action="${nickNameBean.inicio}" value="Volver a Inicio" />
+					<p:commandButton action="${nickNameBean.inicio}" value="Volver a Inicio" />
 				</h:form>
 			</div>
 		</div>

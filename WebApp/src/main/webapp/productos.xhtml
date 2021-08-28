@@ -20,8 +20,9 @@
 </h:head>
 
 <h:body>
-
-
+	<h:form>
+	<p:commandButton action="${nickNameBean.inicio}" value="Volver a Inicio" style="margin:20px;"/>
+	
 	<p:dataTable value="#{nickNameBean.result}" var="resultado"
 		style="margin:20px;">
 
@@ -54,7 +55,8 @@
 		</p:column>
 
 
-	</p:dataTable>
+		</p:dataTable>
+		</h:form>
 
 
 </h:body>
