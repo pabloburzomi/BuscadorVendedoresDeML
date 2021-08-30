@@ -1,6 +1,6 @@
 Clonar repositorio,
 
-importar proyecto Maven MLARest y WebApp, 
+importar proyecto Maven, 
 
 añadir proyecto a un Tomcat Server V9.0,
 
