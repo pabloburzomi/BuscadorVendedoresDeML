@@ -52,14 +52,15 @@ public class nickNameBean {
 		
 		if (nickUsuario.contains(" ")) { 
 
-			 nickUsuario = Arrays.asList(nickUsuario
+			nickUsuario = nickUsuario.trim();
+			nickUsuario = Arrays.asList(nickUsuario
 					 								.split(" ", nickUsuario.length()-1))
-					 								.stream().collect(Collectors.joining("+"))
+					 								.stream()
+					 								.collect(Collectors.joining("+"))
 					 								.toString();
-		} 
+		}
 		
-		
-		
+
 		String url = URLAPI + nickUsuario;
 
 		RestRequest<ProductoRest> peticionRest = new VendedorRestRequest(url);
